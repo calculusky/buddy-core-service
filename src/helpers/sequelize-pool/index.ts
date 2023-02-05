@@ -3,6 +3,9 @@ import { Dialect } from "sequelize";
 
 import { sqlConfig } from "@/config";
 import { User } from "@/models/sql/User";
+import { Plan } from "@/models/sql/Plan";
+import { Invite } from "@/models/sql/Invite";
+import { UserPlan } from "@/models/sql/UserPlan";
 
 const connectionPoolOptions: SequelizeOptions = {
     host: sqlConfig.host,
@@ -15,7 +18,7 @@ const connectionPoolOptions: SequelizeOptions = {
         idle: 20000,
     },
     logging: false,
-    models: [User],
+    models: [User, Plan, Invite, UserPlan],
 };
 
 const connectionPool = new Sequelize(

@@ -11,6 +11,7 @@ async function startServer() {
 
         logger.log("Connecting to SQL Database");
         await pool.authenticate();
+        await pool.sync();
         logger.info("Connected to SQL Database");
 
         // Start Server
