@@ -1,7 +1,10 @@
-import { Sequelize, Options, Dialect } from "sequelize";
-import { sqlConfig } from "@/config";
+import { Sequelize, SequelizeOptions } from "sequelize-typescript";
+import { Dialect } from "sequelize";
 
-const connectionPoolOptions: Options = {
+import { sqlConfig } from "@/config";
+import { User } from "@/models/sql/User";
+
+const connectionPoolOptions: SequelizeOptions = {
     host: sqlConfig.host,
     port: sqlConfig.port,
     dialect: (sqlConfig.connection as Dialect) ?? "mysql",
@@ -12,6 +15,7 @@ const connectionPoolOptions: Options = {
         idle: 20000,
     },
     logging: false,
+    models: [User],
 };
 
 const connectionPool = new Sequelize(

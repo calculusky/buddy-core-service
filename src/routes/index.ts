@@ -2,7 +2,11 @@ import { Router, Request, Response, NextFunction } from "express";
 
 import { isProduction } from "@/config";
 
+import api from "@/routes/api";
+
 const router = Router();
+
+router.use("/api", api);
 
 // Health check
 router.get("/health", (_req, res) => res.sendStatus(200));

@@ -4,6 +4,7 @@ import validate, {
     RequiredEnvironment,
     RequiredEnvironmentTypes,
 } from "@boxpositron/vre";
+export * from "./constants";
 
 dotenv.config();
 
@@ -33,9 +34,17 @@ const runtimeEnvironment: RequiredEnvironment[] = [
         type: RequiredEnvironmentTypes.String,
     },
     {
+        name: "DB_CONNECTION",
+        type: RequiredEnvironmentTypes.String,
+    },
+    {
         name: "ALLOWED_DOMAINS",
         type: RequiredEnvironmentTypes.StringArray,
         delimiter: ",",
+    },
+    {
+        name: "SESSION_TOKEN",
+        type: RequiredEnvironmentTypes.String,
     },
 ];
 
@@ -43,6 +52,7 @@ validate(runtimeEnvironment);
 
 export const isProduction: boolean = process.env.NODE_ENV === "production";
 export const port: number = parseInt(process.env.PORT ?? "3000");
+export const SESSION_TOKEN = process.env.SESSION_TOKEN;
 
 export const allowedDomains: string[] =
     process.env.ALLOWED_DOMAINS?.split(",") ?? [];
@@ -57,10 +67,10 @@ interface SQLConfig {
 }
 
 export const sqlConfig: SQLConfig = {
-    host: process.env.DB_HOST!,
-    port: parseInt(process.env.DB_PORT!),
-    user: process.env.DB_USERNAME!,
-    pass: process.env.DB_PASSWORD!,
-    database: process.env.DB_DATABASE!,
+    host: process.env.DB_HOST,
+    port: parseInt(process.env.DB_PORT),
+    user: process.env.DB_USERNAME,
+    pass: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE,
     connection: process.env.DB_CONNECTION!,
 };
