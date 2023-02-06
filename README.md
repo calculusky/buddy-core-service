@@ -7,6 +7,7 @@ This service is a core service for the Buddy Savings App.
 ### Tech/Tools Used
 
 -   NodeJs (Version 16.15.0)
+-   PNPM (Version 7.18.2)
 -   Sequelize (Version 6.27.0)
 -   MySQL (Version 8.0)
 -   TypeScript (Version4.9.4)
@@ -23,10 +24,10 @@ $ pnpm install
 ```bash
 
 # watch mode
-$ pnpm run start:dev
+$ pnpm run watch
 
 # production mode
-$ npm run  start:prod
+$ pnpm run start
 ```
 
 ## Stay in touch
