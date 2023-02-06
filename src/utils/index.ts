@@ -1,9 +1,11 @@
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import { SESSION_DURATION, SESSION_TOKEN } from "@/config";
-import { JwtPayload } from "./interfaces";
+import { EMAIL_USER, SESSION_DURATION, SESSION_TOKEN } from "@/config";
+import { EmailOptions, JwtPayload } from "./interfaces";
 import { User } from "@/models/sql/User";
 import { TokenGenerationError, TokenValidationError } from "./errors";
+import nodemailer from "nodemailer";
+import { EMAIL_PASSWORD } from "@/config";
 
 export * from "./interfaces";
 export * from "./errors";
@@ -27,7 +29,7 @@ export const validateJWT = async (token: string): Promise<User> => {
 
         return user;
     } catch (error) {
-        throw new TokenValidationError("invalid token");
+        throw new TokenValidationError("unauthorized! invalid token");
     }
 };
 
@@ -52,4 +54,30 @@ export const generateJWT = (id: number): string => {
         console.log(error);
         throw new TokenGenerationError("failed to generate token");
     }
+};
+
+export const sendEmail = (options: EmailOptions) => {
+    const mailTransporter = nodemailer.createTransport({
+        service: "gmail",
+        host: "smtp.gmail.com",
+        auth: {
+            user: EMAIL_USER,
+            pass: EMAIL_PASSWORD,
+        },
+    });
+
+    const mailDetails = {
+        from: EMAIL_USER,
+        to: options.to,
+        subject: options.subject,
+        text: options.text,
+    };
+
+    mailTransporter.sendMail(mailDetails, (err) => {
+        if (err) {
+            console.log("Error Occurs", err);
+        } else {
+            // console.log("Email sent successfully");
+        }
+    });
 };

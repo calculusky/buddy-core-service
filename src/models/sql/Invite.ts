@@ -5,19 +5,19 @@ import {
     Model,
     Table,
 } from "sequelize-typescript";
+import { Plan } from "./Plan";
 import { User } from "./User";
 
-enum Status {
+export enum Status {
     pending = "pending",
     accepted = "accepted",
     declined = "declined",
 }
-
 interface InviteAttributes {
     id: number;
     userId: number;
     planId: number;
-    status: Status;
+    status: string;
     inviterId: number;
 }
 @Table
@@ -42,4 +42,7 @@ export class Invite extends Model<InviteAttributes> {
 
     @BelongsTo(() => User, "inviterId")
     inviter: User;
+
+    @BelongsTo(() => Plan, "planId")
+    plan: Plan;
 }

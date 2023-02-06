@@ -11,6 +11,7 @@ specifiers:
   '@types/jsonwebtoken': ^9.0.1
   '@types/morgan': ^1.9.3
   '@types/node': ^18.11.15
+  '@types/nodemailer': ^6.4.7
   '@types/validator': ^13.7.12
   bcryptjs: ^2.4.3
   cors: ^2.8.5
@@ -25,6 +26,7 @@ specifiers:
   moment-logger: 1.0.5-12
   morgan: ^1.10.0
   mysql2: ^2.3.3
+  nodemailer: ^6.9.1
   nodemon-webpack-plugin: ^4.8.1
   prettier: ^2.8.1
   reflect-metadata: ^0.1.13
@@ -52,6 +54,7 @@ dependencies:
   moment-logger: 1.0.5-12
   morgan: 1.10.0
   mysql2: 2.3.3
+  nodemailer: 6.9.1
   reflect-metadata: 0.1.13
   sequelize: 6.27.0_mysql2@2.3.3
   sequelize-typescript: 2.1.5_ncggdyblk4jq7spjohwzdzvpte
@@ -67,6 +70,7 @@ devDependencies:
   '@types/jsonwebtoken': 9.0.1
   '@types/morgan': 1.9.3
   '@types/node': 18.11.15
+  '@types/nodemailer': 6.4.7
   '@types/validator': 13.7.12
   eslint: 8.29.0
   husky: 8.0.2
@@ -518,6 +522,12 @@ packages:
 
   /@types/node/18.11.15:
     resolution: {integrity: sha512-VkhBbVo2+2oozlkdHXLrb3zjsRkpdnaU2bXmX8Wgle3PUi569eLRaHGlgETQHR7lLL1w7GiG3h9SnePhxNDecw==}
+
+  /@types/nodemailer/6.4.7:
+    resolution: {integrity: sha512-f5qCBGAn/f0qtRcd4SEn88c8Fp3Swct1731X4ryPKqS61/A3LmmzN8zaEz7hneJvpjFbUUgY7lru/B/7ODTazg==}
+    dependencies:
+      '@types/node': 18.11.15
+    dev: true
 
   /@types/nodemon/1.19.2:
     resolution: {integrity: sha512-4GWiTN3HevkxMIxEQ7OpD3MAHhlVsX2tairCMRmf8oYZxmhHw9+UpQpIdGdJrjsMT2Ty26FtJzUUcP/qM5fR8A==}
@@ -2701,6 +2711,11 @@ packages:
   /node-releases/2.0.7:
     resolution: {integrity: sha512-EJ3rzxL9pTWPjk5arA0s0dgXpnyiAbJDE6wHT62g7VsgrgQgmmZ+Ru++M1BFofncWja+Pnn3rEr3fieRySAdKQ==}
     dev: true
+
+  /nodemailer/6.9.1:
+    resolution: {integrity: sha512-qHw7dOiU5UKNnQpXktdgQ1d3OFgRAekuvbJLcdG5dnEo/GtcTHRYM7+UfJARdOFU9WUQO8OiIamgWPmiSFHYAA==}
+    engines: {node: '>=6.0.0'}
+    dev: false
 
   /nodemon-webpack-plugin/4.8.1_webpack@5.75.0:
     resolution: {integrity: sha512-i6xTucitBolVAueD4OASt4jL5gNsAFuTuyn+y6O+NXUqHRVrsOFgOau49iLcjCJJaWAEXMVWpTc5Os79mp7IvQ==}

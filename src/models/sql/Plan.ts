@@ -10,18 +10,18 @@ import {
 import { User } from "./User";
 import { UserPlan } from "./UserPlan";
 
-enum SavingFrequency {
+export enum SavingFrequency {
     daily = "daily",
     weekly = "weekly",
     monthly = "monthly",
 }
 
-enum SavingMethod {
+export enum SavingMethod {
     automatic = "automatic",
     manual = "manual",
 }
 
-enum BuddyRelationship {
+export enum BuddyRelationship {
     sibling = "sibling",
     spouse = "spouse",
     cousin = "cousin",
@@ -34,7 +34,7 @@ interface PlanAttributes {
     identifier: string;
     title: string;
     userId: number;
-    invitedBuddies: number;
+    numberOfBuddies: number;
     acceptedBuddies: number;
     savingMethod: SavingMethod;
     savingFrequency: SavingFrequency;
@@ -58,7 +58,7 @@ export class Plan extends Model<PlanAttributes> {
     userId: number;
 
     @Column({ defaultValue: 0 })
-    invitedBuddies: number;
+    numberOfBuddies: number;
 
     @Column({ defaultValue: 0 })
     acceptedBuddies: number;

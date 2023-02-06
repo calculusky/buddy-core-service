@@ -23,7 +23,7 @@ export class User extends Model<UserAttributes> {
     firstName: string;
 
     @Column
-    lastName: boolean;
+    lastName: string;
 
     @Column({ unique: true })
     email: string;

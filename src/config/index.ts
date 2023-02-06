@@ -46,6 +46,14 @@ const runtimeEnvironment: RequiredEnvironment[] = [
         name: "SESSION_TOKEN",
         type: RequiredEnvironmentTypes.String,
     },
+    {
+        name: "EMAIL_PASSWORD",
+        type: RequiredEnvironmentTypes.String,
+    },
+    {
+        name: "EMAIL_USER",
+        type: RequiredEnvironmentTypes.String,
+    },
 ];
 
 validate(runtimeEnvironment);
@@ -53,6 +61,8 @@ validate(runtimeEnvironment);
 export const isProduction: boolean = process.env.NODE_ENV === "production";
 export const port: number = parseInt(process.env.PORT ?? "3000");
 export const SESSION_TOKEN = process.env.SESSION_TOKEN;
+export const EMAIL_PASSWORD = process.env.EMAIL_PASSWORD;
+export const EMAIL_USER = process.env.EMAIL_USER;
 
 export const allowedDomains: string[] =
     process.env.ALLOWED_DOMAINS?.split(",") ?? [];
