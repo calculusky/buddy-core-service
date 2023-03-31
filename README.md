@@ -6,7 +6,7 @@ Just like the name implies, this service aims to help users and their buddies sa
 
 Note: This is not a complete real live project.
 
-**Live URL:** [**https://wombat-tie.cyclic.app**](https://wombat-tie.cyclic.app)
+**Doc. URL:** [**https://documenter.getpostman.com/view/8508644/2s935oMjFc**](https://documenter.getpostman.com/view/8508644/2s935oMjFc)
 
 ### Tech/Tools Used
 
