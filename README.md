@@ -2,7 +2,11 @@
 
 **Buddy Saving Service**
 
-This service is a core service for the Buddy Savings App.
+Just like the name implies, this service aims to help users and their buddies save money together. In a nutshell, a registered user creates a savings plan and invite his/her buddies to save together with them. The plan would contain frequency of saving (daily, weekly, monthly) and target within a specified period.
+
+Note: This is not a complete real live project.
+
+**Live URL:** [**https://wombat-tie.cyclic.app**](https://wombat-tie.cyclic.app)
 
 ### Tech/Tools Used
 
